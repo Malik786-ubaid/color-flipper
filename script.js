@@ -1,16 +1,16 @@
 const colorInput = document.getElementById("colorPicker");
-const colorText = document.getElementById("colorCode");
-const previewBox = document.getElementById("previewBox");
 const resetBtn = document.getElementById("resetBtn");
 
 colorInput.addEventListener("input", function () {
   const selectedColor = colorInput.value;
   document.body.style.backgroundColor = selectedColor;
 
+  const colorText = document.getElementById("colorCode");
   if (colorText) {
     colorText.textContent = `Selected Color: ${selectedColor}`;
   }
 
+  const previewBox = document.getElementById("previewBox");
   if (previewBox) {
     previewBox.style.backgroundColor = selectedColor;
   }
@@ -21,11 +21,13 @@ resetBtn.addEventListener("click", function () {
   document.body.style.backgroundColor = defaultColor;
   colorInput.value = defaultColor;
 
+  const colorText = document.getElementById("colorCode");
   if (colorText) {
     colorText.textContent = `Selected Color: ${defaultColor}`;
   }
 
+  const previewBox = document.getElementById("previewBox");
   if (previewBox) {
-    previewBox.style.backgroundColor = "#ffffff";
+    previewBox.style.backgroundColor = defaultColor;
   }
 });
