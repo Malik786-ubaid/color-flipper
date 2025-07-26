@@ -49,3 +49,11 @@ h1 {
   display: inline-block;
   background-color: #ffffff;
 }
+#previewBox {
+  width: 100px;
+  height: 100px;
+  margin: 20px auto;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  background-color: #ffffff;
+}
