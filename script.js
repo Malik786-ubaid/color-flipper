@@ -1,17 +1,18 @@
-const btn = document.getElementById("btn");
-const colorText = document.getElementById("color");
+const colorInput = document.getElementById("colorPicker");
 
-btn.addEventListener("click", function () {
-  const randomColor = getRandomColor();
-  document.body.style.backgroundColor = randomColor;
-  colorText.textContent = randomColor;
-});
+colorInput.addEventListener("input", function () {
+  const selectedColor = colorInput.value;
+  document.body.style.backgroundColor = selectedColor;
 
-function getRandomColor() {
-  const letters = "0123456789ABCDEF";
-  let color = "#";
-  for (let i = 0; i < 6; i++) {
-    color += letters[Math.floor(Math.random() * 16)];
+  // Update color code text
+  const colorText = document.getElementById("colorCode");
+  if (colorText) {
+    colorText.textContent = `Selected Color: ${selectedColor}`;
   }
-  return color;
-}
+
+  // Update preview box color
+  const previewBox = document.getElementById("previewBox");
+  if (previewBox) {
+    previewBox.style.backgroundColor = selectedColor;
+  }
+});
