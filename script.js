@@ -5,9 +5,12 @@ colorInput.addEventListener("input", function () {
   document.body.style.backgroundColor = selectedColor;
 
   // Update color code text
-  const colorText = document.getElementById("colorCode");
-  if (colorText) {
-    colorText.textContent = `Selected Color: ${selectedColor}`;
+ const colorPicker = document.getElementById("colorPicker");
+
+colorPicker.addEventListener("input", function () {
+  document.body.style.backgroundColor = colorPicker.value;
+});
+
   }
 
   // Update preview box color
