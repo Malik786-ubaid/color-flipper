@@ -1,21 +1,19 @@
-const colorInput = document.getElementById("colorPicker");
+const resetBtn = document.getElementById("resetBtn");
 
-colorInput.addEventListener("input", function () {
-  const selectedColor = colorInput.value;
-  document.body.style.backgroundColor = selectedColor;
+resetBtn.addEventListener("click", function () {
+  const defaultColor = "#ffffff";
+  colorInput.value = defaultColor;
+  document.body.style.backgroundColor = defaultColor;
 
   // Update color code text
- const colorPicker = document.getElementById("colorPicker");
-
-colorPicker.addEventListener("input", function () {
-  document.body.style.backgroundColor = colorPicker.value;
-});
-
+  const colorText = document.getElementById("colorCode");
+  if (colorText) {
+    colorText.textContent = `Selected Color: ${defaultColor}`;
   }
 
   // Update preview box color
   const previewBox = document.getElementById("previewBox");
   if (previewBox) {
-    previewBox.style.backgroundColor = selectedColor;
+    previewBox.style.backgroundColor = defaultColor;
   }
 });
