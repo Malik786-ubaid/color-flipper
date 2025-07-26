@@ -1,7 +1,10 @@
-document.getElementById("btn").addEventListener("click", function () {
+const btn = document.getElementById("btn");
+const colorText = document.getElementById("color");
+
+btn.addEventListener("click", function () {
   const randomColor = getRandomColor();
   document.body.style.backgroundColor = randomColor;
-  document.getElementById("color").textContent = randomColor;
+  colorText.textContent = randomColor;
 });
 
 function getRandomColor() {
@@ -12,4 +15,3 @@ function getRandomColor() {
   }
   return color;
 }
-
